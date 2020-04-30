@@ -1,5 +1,5 @@
 :root {
-	--primary-color: #e50914;
+	--primary-color: #00bf29;
 	--dark-color: #141414;
 }
 
@@ -69,7 +69,7 @@ img {
 }
 
 .showcase-top img {
-	width: 175px;
+	width: 245px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -100,8 +100,9 @@ img {
 	font-size: 4.5rem;
 	line-height: 1.05;
 	max-width: 640px;
-	margin-bottom: 2rem; 
+	margin-bottom: 2rem;
 }
+
 
 .showcase-content p {
 	text-transform: uppercase;
@@ -110,8 +111,15 @@ img {
 	font-size: 1.9rem;
 	line-height: 1.25;
 	margin-bottom: 2rem;
+	animation-name: leftToRight;
+	animation-duration: 1s;
+	animation-delay: 1s;
 }
 
+.invisible {
+	animation-name: invisible;
+	animation-duration: 1.5s;
+}
 
 /*Tabs*/
 
@@ -356,7 +364,7 @@ table {
 	text-transform: uppercase;
 }
 
-
+/* Responsive */
 
 @media(max-width: 960px) {
 	
@@ -487,6 +495,10 @@ table {
 	}
 }
 
+
+/* Responsive Table */
+
+
 @media only screen and (max-width: 40em) {
     thead th:not(:first-child) {
         display: none;
@@ -502,5 +514,99 @@ table {
         float: left;
     }
 
+}
 
+
+/* Animations */
+
+@keyframes invisible {
+	0% {
+		opacity: 0%;
+	}
+
+	95% {
+		opacity: 0%
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+@keyframes leftToRight {
+	0% {
+		margin-left: -9999px;
+	}
+
+	80% {
+		margin-left: 30px;
+	}
+
+
+	100% {
+		margin-left: 0;
+	}
+
+}
+
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
